@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/workout_chest"
+        android:title="chest"/>
+
+    <item android:id="@+id/workout_arms"
+        android:title="arms"/>
+
+    <item android:id="@+id/workout_back"
+        android:title="back"/>
+
+    <item android:id="@+id/workout_legs"
+        android:title="legs"/>
+
+    <item android:id="@+id/workout_abs"
+        android:title="abs"/>
+
+</menu>
