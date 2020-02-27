@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/chest_benchpress"
+        android:title="benchpress"/>
 
+    <item android:id="@+id/chest_fly"
+        android:title="fly"/>
+
+    <item android:id="@+id/chest_pushup"
+        android:title="push up"/>
+
+    <item android:id="@+id/chest_inclinedbenchpress"
+        android:title="inclined bench press"/>
+
+    <item android:id="@+id/chest_declinedbenchpress"
+        android:title="declined bench press"/>
 </menu>

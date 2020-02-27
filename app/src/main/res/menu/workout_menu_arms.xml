@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/arms_hammercurl"
+        android:title="hammer curl"/>
+
+    <item android:id="@+id/arms_barbellcurl"
+        android:title="barbell curl"/>
+
+    <item android:id="@+id/arms_preachercurl"
+        android:title="preacher curl"/>
+
+    <item android:id="@+id/arms_reversecurl"
+        android:title="reverse curl"/>
+
+    <item android:id="@+id/arms_bicepcurl"
+        android:title="bicep curl"/>
+
+    <item android:id="@+id/arms_dip"
+        android:title="dip"/>
+
+    <item android:id="@+id/arms_triceppulldown"
+        android:title="tricep pulldown"/>
+
+    <item android:id="@+id/arms_tricepextension"
+        android:title="tricep extension"/>
 </menu>

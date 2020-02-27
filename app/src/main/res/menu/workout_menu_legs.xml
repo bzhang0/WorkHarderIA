@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/legs_legcurl"
+        android:title="leg curl"/>
 
+    <item android:id="@+id/legs_legpress"
+        android:title="leg press"/>
+
+    <item android:id="@+id/legs_calfraise"
+        android:title="calf raise"/>
+
+    <item android:id="@+id/legs_squat"
+        android:title="squat"/>
+
+    <item android:id="@+id/legs_legextension"
+        android:title="leg extension"/>
 </menu>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/core_situp"
+        android:title="sit up"/>
+
+    <item android:id="@+id/core_throwdown"
+        android:title="throw down"/>
+
+    <item android:id="@+id/core_crunch"
+        android:title="crunch"/>
+
+    <item android:id="@+id/core_russiantwist"
+        android:title="russian twist"/>
+
+    <item android:id="@+id/core_legraise"
+        android:title="leg raise"/>
+
+</menu>
