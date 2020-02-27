@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
 
         android:text="WORKOUT STARTED"
+        android:textColor="@android:color/black"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,114 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="104dp" />
+        android:text="select workout"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="98dp"
+        android:onClick="showPopup"/>
+
+    <TextView
+        android:id="@+id/weightDisplayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="weight"
+        app:layout_constraintBottom_toTopOf="@+id/weight_amountDisplay"
+        app:layout_constraintEnd_toEndOf="@+id/weight_amountDisplay"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/weight_amountDisplay" />
+
+    <TextView
+        android:id="@+id/weight_amountDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="376dp"
+        android:text="0"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/weight_add"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/weight_amountDisplay"
+        app:layout_constraintStart_toEndOf="@+id/weight_amountDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/weightDisplayText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/weight_subtract"
+        android:layout_width="50dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="24dp"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="@+id/weight_amountDisplay"
+        app:layout_constraintEnd_toStartOf="@+id/weight_amountDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/weightDisplayText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/repDisplayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reps"
+        app:layout_constraintBottom_toTopOf="@+id/rep_amountDisplayText"
+        app:layout_constraintEnd_toEndOf="@+id/rep_amountDisplayText"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/rep_amountDisplayText" />
+
+    <TextView
+        android:id="@+id/rep_amountDisplayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="376dp"
+        android:text="0"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/rep_add"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/rep_amountDisplayText"
+        app:layout_constraintStart_toEndOf="@+id/rep_amountDisplayText"
+        app:layout_constraintTop_toBottomOf="@+id/repDisplayText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/rep_subtract"
+        android:layout_width="50dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="24dp"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="@+id/rep_amountDisplayText"
+        app:layout_constraintEnd_toStartOf="@+id/rep_amountDisplayText"
+        app:layout_constraintTop_toBottomOf="@+id/repDisplayText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/insert_exercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="add"
+        app:layout_constraintEnd_toStartOf="@+id/rep_amountDisplayText"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toEndOf="@+id/weight_amountDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
