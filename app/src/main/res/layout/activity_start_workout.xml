@@ -79,7 +79,6 @@
         android:id="@+id/weight_add"
         android:layout_width="50dp"
         android:layout_height="55dp"
-        android:layout_marginStart="24dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="@+id/weight_amountDisplayText"
         app:layout_constraintStart_toEndOf="@+id/weight_amountDisplayText"
@@ -90,12 +89,11 @@
         android:id="@+id/weight_subtract"
         android:layout_width="50dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="24dp"
         android:text="-"
         app:layout_constraintBottom_toBottomOf="@+id/weight_amountDisplayText"
         app:layout_constraintEnd_toStartOf="@+id/weight_amountDisplayText"
         app:layout_constraintTop_toBottomOf="@+id/weightDisplayText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.666" />
 
     <TextView
         android:id="@+id/repDisplayText"
@@ -123,7 +121,6 @@
         android:id="@+id/rep_add"
         android:layout_width="50dp"
         android:layout_height="55dp"
-        android:layout_marginStart="24dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="@+id/rep_amountDisplayText"
         app:layout_constraintStart_toEndOf="@+id/rep_amountDisplayText"
@@ -134,7 +131,6 @@
         android:id="@+id/rep_subtract"
         android:layout_width="50dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="24dp"
         android:text="-"
         app:layout_constraintBottom_toBottomOf="@+id/rep_amountDisplayText"
         app:layout_constraintEnd_toStartOf="@+id/rep_amountDisplayText"
@@ -145,12 +141,10 @@
         android:id="@+id/insert_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="92dp"
         android:text="add"
-        app:layout_constraintEnd_toStartOf="@+id/rep_amountDisplayText"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toEndOf="@+id/weight_amountDisplayText"
-        app:layout_constraintTop_toBottomOf="@+id/button_selectWorkoutIndicator" />
+        app:layout_constraintTop_toBottomOf="@+id/button_selectWorkoutIndicator"
+        tools:layout_editor_absoluteX="161dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewer"

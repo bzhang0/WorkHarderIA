@@ -1,9 +1,12 @@
 package com.example.workharderia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,6 +19,7 @@ import org.w3c.dom.Text;
 
 public class StartWorkout extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     private SQLiteDatabase mDatabase;
+    private ExerciseAdapter mAdapter;
 
     private String passedSelectedFocusArea;
     private TextView text_selectedFocusAreaTitle;
@@ -38,6 +42,11 @@ public class StartWorkout extends AppCompatActivity implements PopupMenu.OnMenuI
 
         ExerciseDBHelper dbHelper = new ExerciseDBHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerviewer);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mAdapter = new ExerciseAdapter(this, getAllExercises());
+        recyclerView.setAdapter(mAdapter);
 
         text_selectedFocusAreaTitle = (TextView) findViewById(R.id.text_selectedFocusAreaTitle);
         text_selectedFocusAreaTitle.setText("selected focus area: " + passedSelectedFocusArea);
@@ -126,6 +135,19 @@ public class StartWorkout extends AppCompatActivity implements PopupMenu.OnMenuI
         cv.put(WorkoutContract.WorkoutEntry.COLUMN_REPS, mReps);
 
         mDatabase.insert(WorkoutContract.WorkoutEntry.TABLE_NAME, null, cv);
+        mAdapter.swapCursor(getAllExercises());
+    }
+
+    private Cursor getAllExercises() {
+        return mDatabase.query(
+                WorkoutContract.WorkoutEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                WorkoutContract.WorkoutEntry.COLUMN_TIMESTAMP + " DESC"
+        );
     }
 
     public void showPopup(View v) {
