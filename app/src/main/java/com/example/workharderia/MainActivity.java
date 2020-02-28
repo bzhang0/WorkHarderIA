@@ -23,7 +23,14 @@ public class MainActivity extends AppCompatActivity {
                 openAddWorkoutActivity();
             }
         });
-    }
+
+        buttonGoToHistory = (Button) findViewById(R.id.buttonGoToHistory);
+        buttonGoToHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openViewHistory();
+            }
+        });    }
 
     public void openAddWorkoutActivity() {
         Intent intent = new Intent(this, AddWorkout.class);
@@ -31,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openViewHistory() {
-        Intent intent = new Intent(this, AddWorkout.class);
+        Intent intent = new Intent(this, ViewHistory.class);
         startActivity(intent);
     }
 }

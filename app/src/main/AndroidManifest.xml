@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartWorkout"
-            android:parentActivityName=".AddWorkout"></activity>
-        <activity android:name=".AddWorkout"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".ViewHistory"
+            android:parentActivityName=".AddWorkout"
+            ></activity>
+        <activity
+            android:name=".StartWorkout"
+            android:parentActivityName=".AddWorkout" />
+        <activity
+            android:name=".AddWorkout"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

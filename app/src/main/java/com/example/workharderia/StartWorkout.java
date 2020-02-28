@@ -1,6 +1,8 @@
 package com.example.workharderia;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -47,6 +50,20 @@ public class StartWorkout extends AppCompatActivity implements PopupMenu.OnMenuI
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new ExerciseAdapter(this, getAllExercises());
         recyclerView.setAdapter(mAdapter);
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                removeExercise((long) viewHolder.itemView.getTag());
+            }
+        }).attachToRecyclerView(recyclerView);
+
 
         text_selectedFocusAreaTitle = (TextView) findViewById(R.id.text_selectedFocusAreaTitle);
         text_selectedFocusAreaTitle.setText("selected focus area: " + passedSelectedFocusArea);
@@ -126,6 +143,7 @@ public class StartWorkout extends AppCompatActivity implements PopupMenu.OnMenuI
     private void insertExercise() {
         String exerciseName = button_selectWorkoutIndicator.getText().toString();
         if (exerciseName.equals("select workout") || mReps == 0) {
+            Toast.makeText(StartWorkout.this,"invalid input",Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -135,6 +153,13 @@ public class StartWorkout extends AppCompatActivity implements PopupMenu.OnMenuI
         cv.put(WorkoutContract.WorkoutEntry.COLUMN_REPS, mReps);
 
         mDatabase.insert(WorkoutContract.WorkoutEntry.TABLE_NAME, null, cv);
+        Toast.makeText(StartWorkout.this,"exercise submitted",Toast.LENGTH_LONG).show();
+        mAdapter.swapCursor(getAllExercises());
+    }
+
+    private void removeExercise(long id) {
+        mDatabase.delete(WorkoutContract.WorkoutEntry.TABLE_NAME,
+                WorkoutContract.WorkoutEntry._ID + "=" + id, null);
         mAdapter.swapCursor(getAllExercises());
     }
 

@@ -51,10 +51,13 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         String name = mCursor.getString(mCursor.getColumnIndex(WorkoutContract.WorkoutEntry.COLUMN_EXERCISENAME));
         int reps = mCursor.getInt(mCursor.getColumnIndex(WorkoutContract.WorkoutEntry.COLUMN_REPS));
         int weight = mCursor.getInt(mCursor.getColumnIndex(WorkoutContract.WorkoutEntry.COLUMN_WEIGHT));
+        long id = mCursor.getLong(mCursor.getColumnIndex(WorkoutContract.WorkoutEntry._ID));
+
 
         holder.exerciseText.setText(name);
         holder.repCountText.setText(String.valueOf(reps));
         holder.weightCountText.setText(String.valueOf(weight));
+        holder.itemView.setTag(id);
     }
 
     @Override

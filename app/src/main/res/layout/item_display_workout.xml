@@ -5,33 +5,40 @@
     android:layout_margin="8dp">
 
     <TextView
+        android:id="@+id/textview_name_exercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:text="Exercise"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="weight: "
+        android:textSize="20sp" />
+
+    <TextView
         android:id="@+id/textview_weight_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="100"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/textview_reps_exercise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="0"
-        android:textSize="30sp" />
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"/>
 
     <TextView
         android:id="@+id/textview_reps_exercise_timesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" times"
-        android:textSize="30sp" />
+        android:text="reps: "
+        android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textview_name_exercise"
+        android:id="@+id/textview_reps_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Exercise"
-        android:textSize="30sp" />
+        android:text="0"
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"/>
 
 </LinearLayout>
