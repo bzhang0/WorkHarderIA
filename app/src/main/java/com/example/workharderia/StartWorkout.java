@@ -20,6 +20,10 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class StartWorkout extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     private SQLiteDatabase mDatabase;
     private ExerciseAdapter mAdapter;
@@ -178,17 +182,15 @@ public class StartWorkout extends AppCompatActivity implements PopupMenu.OnMenuI
     public void showPopup(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         popup.setOnMenuItemClickListener(this);
-        if (passedSelectedFocusArea.equals("arms")) {
-            popup.inflate(R.menu.workout_menu_arms);
-        } else if (passedSelectedFocusArea.equals("back")) {
-            popup.inflate(R.menu.workout_menu_back);
-        } else if (passedSelectedFocusArea.equals("chest")) {
-            popup.inflate(R.menu.workout_menu_chest);
-        } else if (passedSelectedFocusArea.equals("core")) {
-            popup.inflate(R.menu.workout_menu_core);
-        } else { // legs
-            popup.inflate(R.menu.workout_menu_legs);
-        }
+
+        HashMap<String, Integer> workoutTypes = new HashMap<>();
+        workoutTypes.put("arms", R.menu.workout_menu_arms);
+        workoutTypes.put("back", R.menu.workout_menu_back);
+        workoutTypes.put("chest", R.menu.workout_menu_chest);
+        workoutTypes.put("core", R.menu.workout_menu_core);
+        workoutTypes.put("legs", R.menu.workout_menu_legs);
+
+        popup.inflate(workoutTypes.get(passedSelectedFocusArea));
         popup.show();
     }
 
